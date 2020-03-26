@@ -1,0 +1,37 @@
+<div class="container-fluid">
+    Total Cases : {{ result.data.summary.total }} <br>
+    Confirmed Cases (Indian) : {{ result.data.summary.confirmedCasesIndian }} <br>
+    Confirmed Cases (Foreign) : {{ result.data.summary.confirmedCasesForeign }} <br>
+    Discharged : {{ result.data.summary.discharged }} <br>
+    Deaths : {{ result.data.summary.deaths }} <br>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="alert alert-primary text-center h5 mt-5">
+                Region Wise Distribution
+            </div>
+            <h5>
+                <small class="text-muted">Last Refreshed : {{ result.lastRefreshed | date :'medium' }}</small>
+            </h5>
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">Location</th>
+                        <th scope="col">Cases (Indian)</th>
+                        <th scope="col">Cases (Foreign)</th>
+                        <th scope="col">Discharged</th>
+                        <th scope="col">Deaths</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let row of result.data.regional">
+                        <th scope="row">{{ row.loc }}</th>
+                        <td>{{ row.confirmedCasesIndian }}</td>
+                        <td>{{ row.confirmedCasesForeign }}</td>
+                        <td>{{ row.discharged }}</td>
+                        <td>{{ row.deaths }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
