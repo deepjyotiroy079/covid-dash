@@ -2,7 +2,7 @@ import { DataHistory } from './dataHistory';
 
 export interface StatsHistory {
     success: boolean;
-    data: DataHistory;
+    data: DataHistory[];
     lastRefreshed: Date;
     lastOriginUpdate: Date;
 }

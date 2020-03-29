@@ -16,7 +16,7 @@ export class ChartComponent implements OnInit {
   constructor(private coronaStatsService: CoronaStatsService) {  }
 
   public pieChartOptions: ChartOptions = {
-    responsive: true,
+    responsive: true
   };
   
   public pieChartLabels: Label[] = [['Total Confirmed Cases'], ['Discharged'], 'Deaths'];

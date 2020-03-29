@@ -12,10 +12,9 @@ export class ListAllComponent implements OnInit {
   constructor(private coronaStatsService: CoronaStatsService) { }
 
   result: Stats;
-  total: number;
+
   ngOnInit(): void {
     this.getStatistics();
-    this.total = this.result.data.summary.total;
   }
 
   getStatistics(): void {

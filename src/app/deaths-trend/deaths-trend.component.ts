@@ -1,32 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { CoronaStatsHistoryService } from '../services/corona-stats-history.service';
-import { Color, Label } from 'ng2-charts';
 import { ChartDataSets, ChartOptions } from 'chart.js';
+import { Label, Color } from 'ng2-charts';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  selector: 'app-deaths-trend',
+  templateUrl: './deaths-trend.component.html',
+  styleUrls: ['./deaths-trend.component.css']
 })
-export class HistoryComponent implements OnInit {
-
+export class DeathsTrendComponent implements OnInit {
   constructor(private coronaStatsHistoryService: CoronaStatsHistoryService) { }
 
   lineChartData: ChartDataSets[] = [
-    { data: [],  label: 'Total Confirmed Cases'  },
+    { data: [],  label: 'Total Deaths'  },
   ];
 
   lineChartLabels: Label[] = [];
 
 
-  lineChartOptions: ChartOptions = {
+  lineChartOptions : ChartOptions= {
     responsive: true
   };
 
   lineChartColors: Color[] = [
     {
-      borderColor: 'rgba(9, 132, 227,1.0)',
-      backgroundColor: 'rgba(116, 185, 255,1.0)',
+      borderColor: 'rgba(214, 48, 49,1.0)',
+      backgroundColor: 'rgba(255, 118, 117,1.0)',
     },
   ];
 
@@ -41,12 +40,10 @@ export class HistoryComponent implements OnInit {
         info.data.forEach(element => {
           console.log(element.day);
           this.lineChartLabels.push(element.day.toString());
-          this.lineChartData[0].data.push(element.summary.total);
+          this.lineChartData[0].data.push(element.summary.deaths);
         });
       }, err => console.log(err)
     );
   }
-
-
 
 }

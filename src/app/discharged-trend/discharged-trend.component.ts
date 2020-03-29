@@ -1,32 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { CoronaStatsHistoryService } from '../services/corona-stats-history.service';
-import { Color, Label } from 'ng2-charts';
-import { ChartDataSets, ChartOptions } from 'chart.js';
+import { ChartDataSets } from 'chart.js';
+import { Label, Color } from 'ng2-charts';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  selector: 'app-discharged-trend',
+  templateUrl: './discharged-trend.component.html',
+  styleUrls: ['./discharged-trend.component.css']
 })
-export class HistoryComponent implements OnInit {
+export class DischargedTrendComponent implements OnInit {
 
   constructor(private coronaStatsHistoryService: CoronaStatsHistoryService) { }
 
   lineChartData: ChartDataSets[] = [
-    { data: [],  label: 'Total Confirmed Cases'  },
+    { data: [],  label: 'Total Discharged' },
   ];
 
   lineChartLabels: Label[] = [];
 
 
-  lineChartOptions: ChartOptions = {
-    responsive: true
+  lineChartOptions = {
+    responsive: true,
   };
 
   lineChartColors: Color[] = [
     {
-      borderColor: 'rgba(9, 132, 227,1.0)',
-      backgroundColor: 'rgba(116, 185, 255,1.0)',
+      borderColor: 'rgba(253, 203, 110,1.0)',
+      backgroundColor: 'rgba(255, 234, 167,1.0)',
     },
   ];
 
@@ -41,12 +41,9 @@ export class HistoryComponent implements OnInit {
         info.data.forEach(element => {
           console.log(element.day);
           this.lineChartLabels.push(element.day.toString());
-          this.lineChartData[0].data.push(element.summary.total);
+          this.lineChartData[0].data.push(element.summary.discharged);
         });
       }, err => console.log(err)
     );
   }
-
-
-
 }

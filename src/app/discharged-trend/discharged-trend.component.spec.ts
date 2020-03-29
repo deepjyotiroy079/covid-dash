@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WorldComponent } from './world.component';
+import { DischargedTrendComponent } from './discharged-trend.component';
 
-describe('WorldComponent', () => {
-  let component: WorldComponent;
-  let fixture: ComponentFixture<WorldComponent>;
+describe('DischargedTrendComponent', () => {
+  let component: DischargedTrendComponent;
+  let fixture: ComponentFixture<DischargedTrendComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ WorldComponent ]
+      declarations: [ DischargedTrendComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(WorldComponent);
+    fixture = TestBed.createComponent(DischargedTrendComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

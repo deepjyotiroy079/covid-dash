@@ -8,24 +8,28 @@ import { CoronaStatsService } from './services/corona-stats.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ListAllComponent } from './list-all/list-all.component';
 import { HomeComponent } from './home/home.component';
-import { WorldComponent } from './world/world.component';
 import { ChartComponent } from './chart/chart.component';
 import { HistoryComponent } from './history/history.component';
+import { DeathsTrendComponent } from './deaths-trend/deaths-trend.component';
+import { DischargedTrendComponent } from './discharged-trend/discharged-trend.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListAllComponent,
     HomeComponent,
-    WorldComponent,
     ChartComponent,
-    HistoryComponent
+    HistoryComponent,
+    DeathsTrendComponent,
+    DischargedTrendComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ChartsModule
+    ChartsModule,
+    FontAwesomeModule
   ],
   providers: [CoronaStatsService],
   bootstrap: [AppComponent]
