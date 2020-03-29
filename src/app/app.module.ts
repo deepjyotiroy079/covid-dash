@@ -13,6 +13,7 @@ import { HistoryComponent } from './history/history.component';
 import { DeathsTrendComponent } from './deaths-trend/deaths-trend.component';
 import { DischargedTrendComponent } from './discharged-trend/discharged-trend.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     ChartComponent,
     HistoryComponent,
     DeathsTrendComponent,
-    DischargedTrendComponent
+    DischargedTrendComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
