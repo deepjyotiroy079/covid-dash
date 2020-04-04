@@ -27,9 +27,9 @@ export class ChartComponent implements OnInit {
   public pieChartColor:any = [
     {
         backgroundColor: [
-          'rgb(116, 185, 255, 0.7)',
-          'rgb(255, 234, 167, 0.7)',
-          'rgb(255, 118, 117, 0.7)'
+          'rgb(116, 185, 255)',
+          'rgb(255, 234, 167)',
+          'rgb(255, 118, 117)'
         ]
     }
 ]

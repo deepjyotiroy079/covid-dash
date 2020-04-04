@@ -38,6 +38,10 @@ export class HistoryComponent implements OnInit {
     this.coronaStatsHistoryService.getHistory().subscribe(
       info => {
         console.log(info.data);
+        const max = 12; // maximum value of x-axis values
+        if(info.data.length > max) {
+          info.data.splice(0, info.data.length - max);
+        }
         info.data.forEach(element => {
           console.log(element.day);
           this.lineChartLabels.push(element.day.toString());
